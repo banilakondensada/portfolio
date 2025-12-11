@@ -3,58 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mhar Aldrin A. Palado | Minecraft Portfolio</title>
+    <title>Mhar Aldrin A. Palado | Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Background Elements -->
+    <div class="background-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
     <!-- Header & Navigation -->
     <header>
-        <div class="logo">Minecraft<span>Portfolio</span></div>
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
+        <div class="container">
+            <div class="logo">Mhar<span>Palado</span></div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- Home Section -->
     <section id="home">
-        <div class="home-content">
-            <h1>Mhar Aldrin A. Palado</h1>
-            <h2>Full Stack Developer & UI/UX Designer</h2>
-            <p>Crafting digital experiences with creativity and precision</p>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+        <div class="container">
+            <div class="home-content">
+                <div class="home-text">
+                    <h1 class="fade-in">Mhar Aldrin A. Palado</h1>
+                    <h2 class="fade-in">Full Stack Developer & UI/UX Designer</h2>
+                    <p class="fade-in">Crafting digital experiences with creativity, precision, and modern technologies</p>
+                    <div class="cta-buttons fade-in">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="home-image">
+                    <div class="profile-container">
+                        <div class="profile-image">
+                            <img src="img/profile.jpg" alt="Mhar Aldrin A. Palado">
+                        </div>
+                        <div class="floating-tech">
+                            <div class="tech-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-img fade-in">
-                <img src="img/profile.jpg" alt="Mhar Aldrin A. Palado">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hello! I'm Mhar Aldrin A. Palado</h3>
+                    <p>I'm a passionate Full Stack Developer with expertise in creating dynamic and responsive web applications. With a strong foundation in both front-end and back-end technologies, I bring ideas to life through clean code and intuitive design.</p>
+                    <p>My journey in web development started during my college years, and I've been constantly learning and adapting to new technologies ever since. I believe in creating solutions that not only meet technical requirements but also provide exceptional user experiences.</p>
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value">paladoaldrinmhar@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Phone:</span>
+                            <span class="info-value">+63 936 3819 649</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">Malimatoc 1, Mabini, Batangas</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Education:</span>
+                            <span class="info-value">Bachelor of Science in Computer Science</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="20">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="3">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="10">0</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                </div>
             </div>
-            <div class="about-text fade-in">
-                <h3>Hello! I'm Mhar Aldrin A. Palado</h3>
-                <p>I'm a passionate Full Stack Developer with expertise in creating dynamic and responsive web applications. With a strong foundation in both front-end and back-end technologies, I bring ideas to life through clean code and intuitive design.</p>
-                <p>My journey in web development started during my college years, and I've been constantly learning and adapting to new technologies ever since. I believe in creating solutions that not only meet technical requirements but also provide exceptional user experiences.</p>
-                <div class="skills">
-                    <div class="skill">HTML/CSS</div>
-                    <div class="skill">JavaScript</div>
-                    <div class="skill">Python</div>
-                    <div class="skill">UI/UX Design</div>
-                    <div class="skill">Database Management</div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">React</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Backend Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">PHP</span>
+                            <span class="skill-percentage">82%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="82"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Tools & Others</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">UI/UX Design</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Database Management</span>
+                            <span class="skill-percentage">87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="87"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Git/GitHub</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Freelance Full Stack Developer</h3>
+                        <h4>Self-Employed</h4>
+                        <p>Developed responsive web applications for various clients using modern technologies. Collaborated with designers to implement pixel-perfect UI designs and integrated APIs for dynamic functionality.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - 2022</div>
+                    <div class="timeline-content">
+                        <h3>Web Development Intern</h3>
+                        <h4>Tech Solutions Inc.</h4>
+                        <p>Assisted in developing and maintaining company websites. Gained experience in front-end development, responsive design, and version control systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 - 2022</div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <h4>Batangas State University</h4>
+                        <p>Graduated with honors. Focused on software engineering, web development, and database management. Completed multiple projects showcasing full-stack development skills.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,55 +265,82 @@
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card fade-in">
-                <div class="project-img">
-                    <img src="img/landing.jpg" alt="E-Commerce Platform">
-                </div>
-                <div class="project-info">
-                    <h3>My Landing Page</h3>
-                    <p>A responsive landing page promoting staycation destinations in Mabini, Batangas with booking features and local attraction highlights.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">HTML/CSS</span>
-                        <span class="project-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://tourism-landing-page-tau.vercel.app/" class="project-link">Live Demo</a>
-                        <a href="https://github.com/banilakondensada/Landing-Page" class="project-link">Source Code</a>
-                    </div>
-                </div>
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
             </div>
-            <div class="project-card fade-in">
-                <div class="project-img">
-                    <img src="img/paymongo.jpg" alt="Task Manager App">
-                </div>
-                <div class="project-info">
-                    <h3>Paymongo</h3>
-                    <p>A payment system integration using Paymongo API with GCash transactions for secure online payments.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Xammp</span>
-                        <span class="project-tag">Php</span>
+            <div class="projects-grid">
+                <div class="project-card fade-in" data-category="frontend">
+                    <div class="project-img">
+                        <img src="img/landing.jpg" alt="My Landing Page">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://tourism-landing-page-tau.vercel.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/banilakondensada/Landing-Page" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/banilakondensada/Paymongo" class="project-link">Source Code</a>
+                    <div class="project-info">
+                        <h3>My Landing Page</h3>
+                        <p>A responsive landing page promoting staycation destinations in Mabini, Batangas with booking features and local attraction highlights.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Responsive Design</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="project-card fade-in">
-                <div class="project-img">
-                    <img src="img/portfolio.jpg" alt="Weather Dashboard">
-                </div>
-                <div class="project-info">
-                    <h3>Portfolio</h3>
-                    <p>A responsive personal portfolio website showcasing my projects and skills with modern design and animations.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">HTML/CSS</span>
-                        <span class="project-tag">Java Script</span>
+                <div class="project-card fade-in" data-category="backend">
+                    <div class="project-img">
+                        <img src="img/paymongo.jpg" alt="Paymongo Integration">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/banilakondensada/Paymongo" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://portfolio-gamma-gray-90.vercel.app/" class="project-link">Live Demo</a>
-                        <a href="https://github.com/banilakondensada/portfolio" class="project-link">Source Code</a>
+                    <div class="project-info">
+                        <h3>Paymongo Integration</h3>
+                        <p>A payment system integration using Paymongo API with GCash transactions for secure online payments.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">XAMPP</span>
+                            <span class="project-tag">API Integration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in" data-category="frontend">
+                    <div class="project-img">
+                        <img src="img/portfolio.jpg" alt="Portfolio Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://my-portfolio-xi-one-67.vercel.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/banilakondensada/my-portfolio" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p>A responsive personal portfolio website showcasing projects and skills with modern design and animations.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Responsive Design</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -119,90 +349,100 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <div class="contact-info fade-in">
-                <h3>Let's Connect</h3>
-                <p>I'm always open to discussing new opportunities, creative projects, or potential collaborations.</p>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always open to discussing new opportunities, creative projects, or potential collaborations.</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>paladoaldrinmhar@gmail.com</p>
+                        </div>
                     </div>
-                    <div class="contact-details">
-                        <h4>Email</h4>
-                        <p>paladoaldrinmhar@gmail.com</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+63 936 3819 649</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Malimatoc 1, Mabini, Batangas</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1DV4qLQqym/" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@.aldriiqn" target="_blank" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/banilakondensada_/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/banilakondensada" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mhar-aldrin-palado-3a049a2b3/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Phone</h4>
-                        <p>+63 936 3819 649</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Location</h4>
-                        <p>Malimatoc 1, Mabini, Batangas</p>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/1DV4qLQqym/" target="_blank" class="social-link">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@.aldriiqn" target="_blank" class="social-link">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                    <a href="https://www.instagram.com/banilakondensada_/" target="_blank" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/mkgqqypq" method="POST" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
             </div>
-            <div class="contact-form fade-in">
-                <form action="https://formspree.io/f/mkgqqypq" method="POST" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" class="form-control" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">Minecraft Portfolio</div>
-            <div class="footer-links">
-                <a href="#home" class="footer-link">Home</a>
-                <a href="#about" class="footer-link">About</a>
-                <a href="#projects" class="footer-link">Projects</a>
-                <a href="#contact" class="footer-link">Contact</a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Mhar<span>Palado</span></div>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#experience" class="footer-link">Experience</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <p class="copyright">© 2025 Mhar Aldrin A. Palado. All Rights Reserved.</p>
             </div>
-            <p class="copyright">© 2025 Mhar Aldrin A. Palado. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
