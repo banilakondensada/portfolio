@@ -16,6 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
     // Scroll Animation
     const fadeElements = document.querySelectorAll('.fade-in');
     
@@ -32,33 +42,110 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Form submission handling
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', function(e) {
-    // Formspree will handle the submission, so we don't need to prevent default
-    // Just show a loading state or confirmation
-    const submitBtn = this.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
+    const contactForm = document.getElementById('contactForm');
     
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+    contactForm.addEventListener('submit', function(e) {
+        // Formspree will handle the submission, so we don't need to prevent default
+        // Just show a loading state or confirmation
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Reset button after 3 seconds (in case form takes time)
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 3000);
+    });
     
-    // Reset button after 3 seconds (in case form takes time)
-    setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 3000);
-});
-
-// Optional: Add confirmation message when form is successfully submitted
-contactForm.addEventListener('formspree:success', function() {
-    alert('Thank you! Your message has been sent successfully.');
-    contactForm.reset();
-});
-
-contactForm.addEventListener('formspree:error', function() {
-    alert('Sorry, there was an error sending your message. Please try again.');
-});
+    // Animated counter for stats
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const animateCounter = (element) => {
+        const target = parseInt(element.getAttribute('data-count'));
+        const duration = 2000; // 2 seconds
+        const step = target / (duration / 16); // 60fps
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current);
+        }, 16);
+    };
+    
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(number => {
+        counterObserver.observe(number);
+    });
+    
+    // Animate skill bars on scroll
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    const animateSkillBars = () => {
+        skillBars.forEach(bar => {
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width + '%';
+        });
+    };
+    
+    const skillsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateSkillBars();
+                skillsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+        skillsObserver.observe(skillsSection);
+    }
+    
+    // Project filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            projectCards.forEach(card => {
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
     
     // Add smooth scrolling for all links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -79,7 +166,7 @@ contactForm.addEventListener('formspree:error', function() {
     });
     
     // Text Disappearing Effect on Scroll
-    const homeTextElements = document.querySelectorAll('#home h1, #home h2, #home p, #home .btn');
+    const homeTextElements = document.querySelectorAll('#home h1, #home h2, #home p, #home .cta-buttons');
     
     const disappearOnScroll = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
@@ -97,55 +184,83 @@ contactForm.addEventListener('formspree:error', function() {
         disappearOnScroll.observe(element);
     });
     
-    // Add click sound effect to buttons (optional)
-    const buttons = document.querySelectorAll('.btn, .submit-btn, .skill, .project-link');
+    // Add typing effect to home section
+    const typingText = document.querySelector('.home-text h2');
+    if (typingText) {
+        const text = typingText.textContent;
+        typingText.textContent = '';
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                typingText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        
+        // Start typing after a short delay
+        setTimeout(typeWriter, 1000);
+    }
     
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Create a simple click sound using Web Audio API
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
+    // Particle effect for background (optional enhancement)
+    function createParticles() {
+        const particlesContainer = document.querySelector('.floating-shapes');
+        const particleCount = 15;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('shape');
             
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
+            // Random properties
+            const size = Math.random() * 60 + 20;
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            const delay = Math.random() * -20;
             
-            oscillator.frequency.value = 800;
-            oscillator.type = 'square';
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.top = `${posY}%`;
+            particle.style.left = `${posX}%`;
+            particle.style.animationDelay = `${delay}s`;
             
-            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-            
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 0.1);
-        });
-    });
+            particlesContainer.appendChild(particle);
+        }
+    }
+    
+    // Uncomment the line below to enable random particles
+    // createParticles();
 });
 
-// Minecraft click effect
-document.addEventListener('click', function(e) {
-    // Create click effect
-    const clickEffect = document.createElement('div');
-    clickEffect.style.position = 'fixed';
-    clickEffect.style.left = e.clientX + 'px';
-    clickEffect.style.top = e.clientY + 'px';
-    clickEffect.style.width = '8px';
-    clickEffect.style.height = '8px';
-    clickEffect.style.backgroundColor = '#5A7D32';
-    clickEffect.style.border = '1px solid #4A6622';
-    clickEffect.style.pointerEvents = 'none';
-    clickEffect.style.zIndex = '9999';
-    clickEffect.style.transition = 'all 0.3s ease';
-    
-    document.body.appendChild(clickEffect);
-    
-    // Animate and remove
-    setTimeout(() => {
-        clickEffect.style.transform = 'scale(1.5)';
-        clickEffect.style.opacity = '0';
-    }, 10);
-    
-    setTimeout(() => {
-        document.body.removeChild(clickEffect);
-    }, 300);
+// Add subtle cursor effect
+document.addEventListener('mousemove', function(e) {
+    const cursor = document.querySelector('.cursor');
+    if (cursor) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    }
 });
+
+// Add custom cursor (optional)
+function createCustomCursor() {
+    const cursor = document.createElement('div');
+    cursor.classList.add('cursor');
+    document.body.appendChild(cursor);
+    
+    // Hide default cursor
+    document.body.style.cursor = 'none';
+    
+    // Add hover effects
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-item, .timeline-content');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('cursor-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('cursor-hover');
+        });
+    });
+}
+
+// Uncomment the line below to enable custom cursor
+// createCustomCursor();
